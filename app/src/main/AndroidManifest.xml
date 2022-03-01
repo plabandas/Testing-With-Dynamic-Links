@@ -9,38 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DynamicLinks"
-        android:name=".ApplicationClass"
-        >
-       <activity android:name=".MainActivity"
-           android:exported="true">
+        android:name=".ApplicationClass">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
 
-           <!--            //ai onso ta deeplink-->
+            <!--            //ai onso ta AppLink-->
 
-<!--                       <intent-filter>-->
-<!--                           <action android:name="android.intent.action.VIEW"/>-->
-<!--                           <category android:name="android.intent.category.DEFAULT"/>-->
-<!--                           <category android:name="android.intent.category.BROWSABLE"/>-->
-<!--                           <data-->
-<!--                               android:host="codeforces.com"-->
-<!--                               android:scheme="https"/>-->
-<!--                       </intent-filter>-->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
-           <!--            //ai onso ta AppLink-->
+                <data
+                    android:host="allbanglanewspapers.page.link"
+                    android:scheme="https"
+                    android:pathPrefix="/news" />
+            </intent-filter>
 
-           <intent-filter android:autoVerify="true">
-               <action android:name="android.intent.action.VIEW" />
-
-               <category android:name="android.intent.category.DEFAULT" />
-               <category android:name="android.intent.category.BROWSABLE" />
-
-               <data
-                   android:host="allbanglanewspapers.page.link"
-                   android:pathPrefix="/news"
-                   android:scheme="https" />
-           </intent-filter>
-
-       </activity>
+        </activity>
 
         <activity
             android:name=".MainActivity2"
@@ -50,10 +38,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
-
-
 
         </activity>
     </application>

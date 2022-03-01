@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     TextView textView1, textView2;
 
+    WebView webView;
+
     //Deeplinking URL Chilo = https://www.example.com/?email=https://www.kalerkantho.com/&password=12345
 
 
@@ -32,8 +36,19 @@ public class MainActivity extends AppCompatActivity {
         textView1 = findViewById(R.id.tv1);
         textView2 = findViewById(R.id.tv2);
 
-        //getdynamiclinkfromfirebase(); //this is for deeplink
-        appLinkIntregation();  //This is for AppLink
+
+        webView = findViewById(R.id.web) ;
+
+        webView.getSettings().setJavaScriptEnabled(true);
+
+
+        webView.setWebViewClient(new WebViewClient(){
+
+        });
+
+
+
+        getdynamiclinkfromfirebase(); //this is for deeplink
     }
 
     //This is for deepLink
@@ -61,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
 
                             textView1.setText(email);
                             textView2.setText(password);
+
+                            webView = findViewById(R.id.web) ;
+                            webView.loadUrl(email);
                         }
                     }
                 })
@@ -76,18 +94,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //This is for AppLink
-    private void appLinkIntregation() {
-        // ATTENTION: This was auto-generated to handle app links.
-        Intent appLinkIntent = getIntent();
-        String appLinkAction = appLinkIntent.getAction();
-        Uri appLinkData = appLinkIntent.getData();
-
-        if(appLinkData!= null)
-        {
-            String a = appLinkData.toString();
-            textView1.setText(a);
-            Toast.makeText(MainActivity.this, "Link"+a, Toast.LENGTH_SHORT).show();
-        }
-    }
 }

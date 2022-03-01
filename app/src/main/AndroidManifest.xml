@@ -13,31 +13,31 @@
        <activity android:name=".MainActivity"
            android:exported="true">
 
-           <!--            //ai onso ta deeplink-->
+           <!--            //ai documentation kora onso ta deeplink-->
 
-                       <intent-filter>
-                           <action android:name="android.intent.action.VIEW"/>
-                           <category android:name="android.intent.category.DEFAULT"/>
-                           <category android:name="android.intent.category.BROWSABLE"/>
-                           <data
-                               android:host="codeforces.com"
-                               android:scheme="https"/>
-                       </intent-filter>
-
+           <!--            <intent-filter>-->
+           <!--                <action android:name="android.intent.action.VIEW"/>-->
+           <!--                <category android:name="android.intent.category.DEFAULT"/>-->
+           <!--                <category android:name="android.intent.category.BROWSABLE"/>-->
+           <!--                <data-->
+           <!--                    android:host="codeforces.com"-->
+           <!--                    android:scheme="https"/>-->
+           <!--            </intent-filter>-->
 
            <!--            //ai onso ta AppLink-->
 
-<!--           <intent-filter android:autoVerify="true">-->
-<!--               <action android:name="android.intent.action.VIEW" />-->
 
-<!--               <category android:name="android.intent.category.DEFAULT" />-->
-<!--               <category android:name="android.intent.category.BROWSABLE" />-->
+           <intent-filter android:autoVerify="true">
+               <action android:name="android.intent.action.VIEW" />
 
-<!--               <data-->
-<!--                   android:host="allbanglanewspapers.page.link"-->
-<!--                   android:pathPrefix="/news"-->
-<!--                   android:scheme="https" />-->
-<!--           </intent-filter>-->
+               <category android:name="android.intent.category.DEFAULT" />
+               <category android:name="android.intent.category.BROWSABLE" />
+
+               <data
+                   android:host="allbanglanewspapers.page.link"
+                   android:pathPrefix="/news"
+                   android:scheme="https" />
+           </intent-filter>
 
        </activity>
 

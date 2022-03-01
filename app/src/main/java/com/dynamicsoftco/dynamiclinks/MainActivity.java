@@ -21,9 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
     TextView textView1, textView2;
 
-    //Deeplinking URL Chilo = https://www.example.com/?email=https://www.kalerkantho.com/&password=12345
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         textView1 = findViewById(R.id.tv1);
         textView2 = findViewById(R.id.tv2);
 
-        getdynamiclinkfromfirebase(); //this is for deeplink
-        //appLinkIntregation();  //This is for AppLink
+        //getdynamiclinkfromfirebase(); //this is for deeplink
+        appLinkIntregation();
     }
 
     //This is for deepLink
